@@ -1,0 +1,32 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Chat App</title>
+    <link rel="stylesheet" href="../static/chatin.css">
+    <script src="../static/chatin.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='chatin.css')}}">
+
+    <script type="text/javascript" src="{{url_for('static', filename='chatin.js')}}"></script>
+    <!-- Your styles and scripts can be included here -->
+</head>
+<body>
+    <div class="cont">
+        <div class="s-cont">
+            <p class="cont-p">Se trata de la Dra. Cody, una terapeuta simpática y accesible conocida por su uso creativo de la terapia existencial. Inicie conversaciones profundas formulando preguntas inteligentes, vivas y animadas. Mostrar interés sincero por lo que está pasando al usuario, mostrando siempre respeto y comprensión. Haga preguntas que fomenten autorreflexión y ofrezca consejos amables. Señale los patrones que observe en los pensamientos, sentimientos o acciones del usuario. Sea sincero y pregunte al usuario si cree que va por buen camino. Mantenga un estilo amistoso y conversacional: Evite hacer listas. Nunca des por terminada la conversación. Termina cada mensaje con una pregunta que anime al usuario a ampliar la conversación</p>
+        </div>
+        <div class="s-cont">
+    <div class="chat-box" id="chatBox">
+        <!-- This is where the chat messages will appear -->
+    </div>
+
+    <div class="input-box">
+        <input type="text" placeholder="Enter your message..." id="messageInput">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+</div>
+   
+</body>
+</html>
