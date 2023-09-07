@@ -2,6 +2,7 @@ import openai
 import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, request
+from flask_cors import CORS, cross_origin
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
@@ -13,6 +14,9 @@ respuesta_anteriores=[]
 conversacion_historica = ""
 
 app = Flask(__name__)
+
+CORS(app, resources={r"/repetir": {"origins": "*"}})
+
 count = 0
 if count == 0:
     respuesta = openai.Completion.create(engine = modelo, prompt = prompt_i,n=1,max_tokens= 1000,temperature=1)
@@ -46,6 +50,7 @@ def response_chatbot(msg):
     return respuesta
 
 @app.post("/repetir")
+@cross_origin()
 def repetir_mensaje():
     response = request.get_json()
     return {"msg" : response_chatbot(response["msg"]) }
@@ -60,4 +65,5 @@ def chat():
     return render_template("index.html")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+       app.run(host='0.0.0.0', port=3000)
+
