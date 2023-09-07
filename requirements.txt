@@ -51,7 +51,7 @@ typer==0.7.0
 typing-extensions==4.6.2
 urllib3==2.0.2
 wasabi==1.1.1
-Werkzeug==2.3.6
+Werkzeug==2.2.3
 wrapt==1.12.1
 yarl==1.9.2
 zipp==3.16.2
